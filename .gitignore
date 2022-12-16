@@ -1,0 +1,11 @@
+/.idea
+/.fleet
+/.vscode
+
+**/.DS_Store
+
+buildAll.fish
+/output
+
+mr-reviewer
+

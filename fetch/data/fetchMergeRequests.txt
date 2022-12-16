@@ -1,0 +1,13 @@
+query {
+  project(fullPath: "%s") {
+    mergeRequests(state: opened) {
+      nodes {
+        title
+        author {
+          name
+        }
+        webUrl
+      }
+    }
+  }
+}
