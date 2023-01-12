@@ -13,7 +13,7 @@ import (
 	"github.com/charmbracelet/bubbles/list"
 )
 
-//go:embed  data/fetchMergeRequests.txt
+//go:embed  gql/fetchMergeRequests.txt
 var fetchMergeRequests string
 
 type MRsResponse struct {
