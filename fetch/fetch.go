@@ -98,7 +98,7 @@ func FetchMRsFromRepo(c *config.Config, project string) (*MRsResponse, error) {
 func FilterDraft(mrs *MRsResponse) *MRsResponse {
 	result := []MR{}
 	for _, mr := range mrs.Data.Project.MergeRequests.Nodes {
-		if !strings.HasPrefix(strings.ToLower(mr.Title), "draft:") {
+		if !strings.HasPrefix(strings.ToLower(mr.Title), "draft") {
 			result = append(result, mr)
 		}
 	}
