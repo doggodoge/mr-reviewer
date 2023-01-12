@@ -6,6 +6,10 @@ query {
         author {
           name
         }
+        approvalsRequired
+        headPipeline {
+          status
+        }
         webUrl
       }
     }

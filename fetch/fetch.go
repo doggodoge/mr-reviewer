@@ -37,6 +37,10 @@ type MR struct {
 	Author struct {
 		Name string `json:"name"`
 	} `json:"author"`
+	ApprovalsRequired int `json:"approvalsRequired"`
+	HeadPipeline      struct {
+		Status string `json:"status"`
+	} `json:"headPipeline"`
 	URL string `json:"webUrl"`
 }
 
@@ -48,7 +52,24 @@ func (mrs *MRsResponse) ToListItems(showDraft bool) []list.Item {
 	}
 
 	for _, mr := range mrs.Data.Project.MergeRequests.Nodes {
-		l = append(l, config.Repository{Name: mr.Title, Desc: mr.Author.Name, Route: mr.URL})
+		var approved string
+		if mr.ApprovalsRequired != 0 {
+			approved = "No"
+		} else {
+			approved = "Yes"
+		}
+		desc := fmt.Sprintf(
+			"%s | Approved: %s | Pipeline Status: %s",
+			mr.Author.Name,
+			approved,
+			mr.HeadPipeline.Status,
+		)
+
+		l = append(l, config.Repository{
+			Name:  mr.Title,
+			Desc:  desc,
+			Route: mr.URL,
+		})
 	}
 
 	return l

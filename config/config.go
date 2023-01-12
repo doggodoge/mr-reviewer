@@ -17,9 +17,9 @@ type Config struct {
 }
 
 type Repository struct {
-	Name  string `json:"name"`
-	Desc  string `json:"description"`
-	Route string `json:"route"`
+	Name     string `json:"name"`
+	Desc     string `json:"description"`
+	Route    string `json:"route"`
 }
 
 func (r Repository) Title() string       { return r.Name }
