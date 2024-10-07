@@ -4,13 +4,13 @@ I was growing a bit sick of plodding through GitLab's UI to find MRs that are
 ready for review, so made this quick dirty TUI to access non-draft (ready to review)
 MRs quickly.
 
-<img width="1037" alt="image" src="https://media.github.ibm.com/user/232276/files/b42b07aa-9a97-4e0e-8c81-7b3853ceb437">
+<img width="1037" alt="image" src="">
 
 ## Features
 
 - Attractive TUI Interface
 - Quickly drill down and find a MR from the comfort of your command line
-- Toggle draft PRs by pressing `d`.
+- Toggle draft PRs by pressing <kbd>d</kbd>.
 - Slap enter on a MR in the tool, and it opens in your browser!
 
 ## Build
@@ -60,8 +60,8 @@ You will need a tiny bit of configuration to add your bearer token.
 
 ## Needs work
 
-- Our repos are hard-coded. We could be getting this from GitLab
 - The code is pretty messy ;-;
 - Absolutely no tests
 - Missing help messages at the bottom for `d` and `backspace`. Shouldn't be too
   challenging to add.
+- A UI for creating the configuration for repositories would be nice.
