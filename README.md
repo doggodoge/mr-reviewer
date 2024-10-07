@@ -4,7 +4,7 @@ I was growing a bit sick of plodding through GitLab's UI to find MRs that are
 ready for review, so made this quick dirty TUI to access non-draft (ready to review)
 MRs quickly.
 
-<img width="1037" alt="image" src="">
+<img width="1037" alt="image" src="https://github.com/user-attachments/assets/9110f527-72e3-413d-ab2e-5c3e9cfee30f">
 
 ## Features
 
