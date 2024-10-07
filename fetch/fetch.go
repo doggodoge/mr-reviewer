@@ -37,8 +37,8 @@ type MR struct {
 	Author struct {
 		Name string `json:"name"`
 	} `json:"author"`
-	ApprovalsRequired int `json:"approvalsRequired"`
-	HeadPipeline      struct {
+	Approved     bool `json:"approved"`
+	HeadPipeline struct {
 		Status string `json:"status"`
 	} `json:"headPipeline"`
 	URL string `json:"webUrl"`
@@ -53,10 +53,10 @@ func (mrs *MRsResponse) ToListItems(showDraft bool) []list.Item {
 
 	for _, mr := range mrs.Data.Project.MergeRequests.Nodes {
 		var approved string
-		if mr.ApprovalsRequired != 0 {
-			approved = "No"
-		} else {
+		if mr.Approved {
 			approved = "Yes"
+		} else {
+			approved = "No"
 		}
 		desc := fmt.Sprintf(
 			"%s | Approved: %s | Pipeline Status: %s",
