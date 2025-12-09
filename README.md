@@ -1,3 +1,6 @@
+> [!WARNING]
+> This project has been archived on GitHub and moved to https://sr.ht/~gary_moore/mr-reviewer/
+
 # MR Reviewer
 
 I was growing a bit sick of plodding through GitLab's UI to find MRs that are
